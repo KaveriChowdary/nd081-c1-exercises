@@ -33,6 +33,11 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Install ODBC drivers
+        run: |
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
+
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
@@ -58,4 +63,5 @@ jobs:
         with:
           app-name: 'udacitycms'
           slot-name: 'Production'
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A089B31A2A5244D5AA33C38AC1B5AE68 }}
