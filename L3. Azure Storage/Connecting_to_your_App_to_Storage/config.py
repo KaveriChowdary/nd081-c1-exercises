@@ -14,5 +14,4 @@ class Config(object):
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'cmsstorage15'
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'a2BgfP9sFya+jhGDCONs4YooWZGoWMGzJwTI1iBNTgVa7dxY/nqOF8Tj0HqO/WLB07AWaj4NDFey+AStq+KSVw=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
-    AUTHORITY = 'https://login.microsoftonline.com/common'
-    SCOPE = ["User.Read"]
+    
